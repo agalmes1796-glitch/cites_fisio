@@ -1,0 +1,4 @@
+{
+  "theme": "dark",
+  "allowlist": ["Read", "Bash", "WebFetch", "WebSearch", "Agent", "CronCreate", "CronDelete", "CronList", "Edit", "Write", "SendMessage", "Skill", "Workflow"]
+}
