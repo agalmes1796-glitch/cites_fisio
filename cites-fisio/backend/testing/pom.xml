@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cat.cites.fisio</groupId>
+        <artifactId>cites-fisio-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>testing</artifactId>
+    <name>Testing Service</name>
+    <description>Esquelet de microservei de proves amb Eureka client</description>
+
+    <properties>
+        <!--
+          Spring Cloud 2024.0.x (gestionat pel pare) es basa en Spring Boot 3.5
+          i es trenca amb Spring Boot 4 (LifecycleMvcEndpointAutoConfiguration
+          referencia org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration,
+          ja no existent). La serie 2025.1.x es la serie compatible amb Boot 4.x.
+          Quan el pare s'actualitzi, es pot eliminar aquesta propietat.
+        -->
+        <spring-cloud.version>2025.1.3</spring-cloud.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

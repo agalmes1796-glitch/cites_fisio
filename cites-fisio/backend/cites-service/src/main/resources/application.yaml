@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: cites-service
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8085
+
+logging:
+  level:
+    root: INFO
+    cat.cites.fisio: DEBUG

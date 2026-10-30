@@ -1,7 +1,7 @@
 # Requisits del sistema - Gestor de cites per clínica de fisioteràpia
 
 ## E-01: Instal·lació de paquets
-Quan s'instal·la el projecte, els paquets necessaris (vitest) han d'estar presents.
+Quan s'instal·la el projecte, els paquets necessaris han d'estar presents.
 
 ## E-02: Configuració de l'entorn de proves
 Les proves s'han d'executar amb el timezone Europe/Madrid.

@@ -1,0 +1,12 @@
+# Configuracion de la prova: mateix identificador de aplicacio que en produccio,
+# pero sense servidor Eureka. No es fan mock: simplement no s'arrenca el component de xarxa.
+spring:
+  application:
+    name: testing
+  cloud:
+    discovery:
+      enabled: false
+
+eureka:
+  client:
+    enabled: false

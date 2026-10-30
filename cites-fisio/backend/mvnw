@@ -1,0 +1,29 @@
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# Apache Maven Build工具 wrapper script (Unix)
+#
+# This script sets up the classpath to run Apache Maven.
+# It will download a maven-wrapper.jar if one is not present.
+# ----------------------------------------------------------------------------
+
+if [ -z "$MVN_Wrapper_Jar" ]; then
+  MVN_Wrapper_Jar="mvnw/mvnw.jar"
+fi
+
+# Download from https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar
+MVN_Wrapper_Url="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"
+
+# Create the wrapper directory if it doesn't exist
+mkdir -p mvnw
+
+# Check if the wrapper jar exists, if not download it
+if [ ! -f "$MVN_Wrapper_Jar" ]; then
+  echo "Downloading Maven Wrapper..."
+  curl -L -o "$MVN_Wrapper_Jar" "$MVN_Wrapper_Url"
+fi
+
+# Get the java command
+JAVA_CMD="java"
+
+# Execute maven with the wrapper jar
+exec "$JAVA_CMD" -jar mvnw/mvnw.jar "$@"

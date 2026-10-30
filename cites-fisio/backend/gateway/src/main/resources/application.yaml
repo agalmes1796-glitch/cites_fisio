@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: api-gateway
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: cites-service
+          uri: lb://cites-service
+          predicates:
+            - Path=/api/cites/**, /api/v1/cites/**
+        - id: especialitats-service
+          uri: lb://especialitats-service
+          predicates:
+            - Path=/api/especialitats/**, /api/v1/especialitats/**
+        - id: fisioterapeutes-service
+          uri: lb://fisioterapeutes-service
+          predicates:
+            - Path=/api/fisioterapeutes/**, /api/v1/fisioterapeutes/**
+        - id: cataleg-service
+          uri: lb://cataleg-service
+          predicates:
+            - Path=/api/cataleg/**, /api/v1/cataleg/**
+
+logging:
+  level:
+    root: INFO
+    cat.cites.fisio: DEBUG

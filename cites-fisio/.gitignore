@@ -1,3 +1,9 @@
 node_modules/
 coverage/
 .DS_Store
+
+# Artefactes de Maven (no versionables)
+**/target/
+
+# Fitxers de prova locals (no versionables)
+helloword.html

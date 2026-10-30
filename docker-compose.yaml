@@ -1,0 +1,6 @@
+name: gestor-de-cites
+services:
+  web:
+    image: nginx
+    ports:
+      - "62:80"
